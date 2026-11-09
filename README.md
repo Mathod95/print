@@ -124,7 +124,6 @@ L'extérieur, le filetage et le verrou sont identiques : **le couvercle est le m
 - **Bague et manchon** : rainure côté plateau.
 
 Dans Bambu Studio : *Fichier → Ouvrir un projet*.
-Si un réglage ne se charge pas, choisis *Importer la géométrie uniquement* et sélectionne les profils ci-dessus à la main.
 Si tu n'as pas besoin du manchon, supprime-le du plateau avant de lancer l'impression.
 
 ---
@@ -173,13 +172,12 @@ La pièce `test` est une simple rainure de 7 mm de haut, avec la lettre de la ta
   - verrouillée, elle ne peut plus être soulevée ;
 - toutes les pièces sont des volumes fermés (maillages étanches).
 
-**Testé en vrai :**
+**Testé en vrai** (P1S, Bambu PLA Matte) :
 - rainure M : 6 tubes sur 13 rentrent ;
-- rainure L : tous les tubes rentrent.
-
-**Pas encore testé en vrai :** le verrou quart de tour avec rampe et le fond en une pièce.
-Les jeux (0,2 à 0,35 mm) sont des valeurs classiques pour une P1S en PLA, mais le PLA Matte peut serrer un peu plus.
-Imprime d'abord une boîte avant de lancer une série.
+- rainure L : **tous les tubes rentrent** ;
+- **fond en une pièce** : parfait ;
+- **verrou quart de tour** (sens unique + rampe de serrage) : **parfait**, sans jeu et sans forcer ;
+- le projet `.3mf` s'ouvre et s'imprime correctement dans Bambu Studio.
 
 ---
 

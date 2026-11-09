@@ -17,6 +17,12 @@ Contexte pour reprendre ce projet dans une nouvelle session. Le README.md décri
 - **Pas de flèche en relief** sur le couvercle (retirée à sa demande).
 - **Pas de lamelles souples** pour serrer le carton : nervures rigides, et colle si un tube flotte.
 
+## Validé en impression réelle (P1S, PLA Matte) — ne pas modifier sans raison
+- Rainure **L** : tous ses tubes rentrent.
+- **Fond en une pièce** : parfait.
+- **Verrou quart de tour** (sens unique, butée anti-retour, rampe, `serrage_verrou` = 0,05, `jeu_empilage` = 0,2, `jeu_vertical` = 0,2) : **parfait**, ni jeu ni serrage excessif.
+- Le projet `.3mf` généré par `outils/make_bambu_project.py` s'ouvre et s'imprime correctement dans Bambu Studio.
+
 ## Erreurs à ne pas refaire
 - **Ne jamais supposer une cote de tube.** La v1 était dessinée pour Ø 100 mm (valeur inventée) ; ses tubes font ~Ø 88 / 83. Ça a coûté un tirage complet.
 - Annoncer clairement ce qui est **vérifié en simulation**, ce qui est **déduit**, et ce qui est **testé en vrai**. Il demande « tu es sûr ? ».
@@ -34,7 +40,7 @@ Contexte pour reprendre ce projet dans une nouvelle session. Le README.md décri
 - Rainure (`canal_tube`) : seule partie qui dépend de `taille` (`Rs`, `r3t`, `rib_c`). L : parois Ø 82,5 / 89,9, nervures Ø 88,9. M : Ø 82,2 / 88,8, nervures Ø 88,0.
 - Emboîtement du carton `profondeur` = 6 mm. Bague `Hb` = 13 mm. Fond 17,2 mm. Couvercle 15,4 mm. Manchon 13,6 mm.
 - Filetage : rond, `pas` 4, `excentrique` 0,8, `longueur_filet` 6, `jeu_filet` 0,35.
-- Verrou : `ergots` 3, `course` 30°, `jeu_empilage` 0,2, `jeu_vertical` 0,2, `serrage_verrou` 0,05 (réglage à ajuster après essai réel).
+- Verrou : `ergots` 3, `course` 30°, `jeu_empilage` 0,2, `jeu_vertical` 0,2, `serrage_verrou` 0,05 (**validé en vrai**).
 - Hauteur d'une boîte simple ≈ tube + 28 mm ; boîte double ≈ 2 tubes + 30 mm ; pas d'empilage ≈ tube + 22 mm.
 
 ## Comment vérifier une modification
@@ -51,9 +57,8 @@ Contexte pour reprendre ce projet dans une nouvelle session. Le README.md décri
 - Plateaux sur 2 colonnes, décalage 256 × 1,2 = 307,2 mm (colonne → +X, rangée → −Y).
 - Zones à éviter sur P1S : **zone interdite** X 0–18 / Y 0–28, et **ligne de purge** le long de l'avant (Y ≈ 1–2, X 18–240, plus un retour en X ≈ 240 jusqu'à Y ≈ 11). Garder les pièces à Y ≥ 4.
 - 4 pièces de Ø 93,6 tiennent largement sur un plateau (grille 2×2, centres 72 / 186). 6 pièces tiennent mais à ~1,6 mm d'écart.
-- Le fichier n'a **jamais été ouvert dans Bambu Studio** depuis cet environnement. Si l'utilisateur signale un souci d'ouverture : « Importer la géométrie uniquement » puis choisir les 3 profils.
+- Le fichier s'ouvre et s'imprime correctement dans Bambu Studio (validé par l'utilisateur). En cas de souci sur une future version : « Importer la géométrie uniquement » puis choisir les 3 profils.
 
 ## Pistes ouvertes
-- Ajuster `serrage_verrou` après le premier essai réel du verrou (jeu restant → 0,10–0,15 ; trop dur → 0).
 - Manchon mixte M/L si un jour il mélange des tailles dans une boîte double.
 - Projet parallèle évoqué : **rail pour boîtes IKEA SAMLA sous un banc** (22 l et 45 l, ancien modèle, glissement sur 39 cm, rails en L aux bouts + rail en T au milieu). En attente des cotes du rebord (débord, épaisseur, pattes de coin).
